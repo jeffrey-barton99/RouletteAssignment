@@ -30,7 +30,7 @@ namespace JeffBartonRouletteLab
             //int totalRows = 12; not sure if rows will work this way
             int totalColumns = 3;
             
-            List<Bins> binCount  = Bins.MakeBins(totalBins, totalColumns);
+            List<Bins> binCount  = Bins.makeBins(totalBins, totalColumns);
             int randombinCount = 0;
             Bins hitBin = new Bins();
             
