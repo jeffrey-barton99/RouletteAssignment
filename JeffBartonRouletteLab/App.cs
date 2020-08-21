@@ -34,7 +34,7 @@ namespace JeffBartonRouletteLab
             int randombinCount = 0;
             Bins hitBin = new Bins();
             
-            randombinCount = RandomBall(binCount, totalBins);
+            //randombinCount = binCount, totalBins;
             hitBin = binCount[randombinCount];
             Console.WriteLine("Your winning numbers are:");
             // the bets. randombinCount = 35???
@@ -50,5 +50,7 @@ namespace JeffBartonRouletteLab
             Bet.Splits(totalBins, randombinCount, totalColumns);
             Bet.Corner(totalBins, randombinCount, totalColumns);
         }
+
+        //private int RandomBall(List<Bins> binCount, int binCount)
    }
 }
