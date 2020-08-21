@@ -170,10 +170,83 @@ namespace JeffBartonRouletteLab
                     temp6 = (temp * totalColumns) + 3;
                     Console.WriteLine($"{temp1}, {temp2}, {temp3}, {temp4}, {temp5}, {temp6} or  {temp4}, {temp5}, {temp6}, {temp4 + totalColumns}, {temp5 + totalColumns}, {temp6 + totalColumns} all winners here!!!");
                     break;
-
-
-
             }
+        }
+    }
+    internal static void Splits(int randomBinCount, int totalBins, int totalColumns)
+    {
+        if (randomBinCount == 0 || randomBinCount == totalBins +1)
+        {
+            Console.WriteLine("No love from the Splits");
+        }
+        else
+        {
+            int street = (randomBinCount - 1) / totalColumns;
+            int Columns = (randomBinCount % totalColumns);
+            string a = randomBinCount + "/" + (randomBinCount + 1) + " ";
+            string b = randomBinCount + "/" + (randomBinCount - 1) + " ";
+            string c = randomBinCount + "/" + (randomBinCount + totalColumns);
+            string d = (randomBinCount - totalColumns) + "/" + randomBinCount + " ";
+
+            switch (street)
+            {
+                case 0:
+                    d = "";
+                    break;
+                case 1:
+                    c = "";
+                    break;
+                default:
+                    break;
+            }
+
+            Console.WriteLine($"Winners on {a}{b}{c}and{d}");
+        }
+               
+    }
+    internal static void Corner(int randomBinCount, int totalBins, int totalColumns)
+    {
+        if (randomBinCount == 0 || randomBinCount == totalBins +1)
+        {
+            Console.WriteLine("No cutting corners today");
+        }
+        else
+        {
+            int street = (randomBinCount - 1) / totalColumns;
+            int column = (randomBinCount % totalColumns);
+            string ad = (randomBinCount + 1 - totalColumns) + "/" + (randomBinCount + 1) + "/" + (randomBinCount - totalColumns) + "/" + randomBinCount + " ";
+            string ac = (randomBinCount + 1) + "/" + (randomBinCount + 1 + totalColumns) + "/" + randomBinCount + "/" + (randomBinCount + totalColumns) + " ";
+            string bd = (randomBinCount - totalColumns) + "/" + randomBinCount + "/" + (randomBinCount - totalColumns - 1) + "/" + (randomBinCount - 1) + " ";
+            string bc = randomBinCount + "/" + (randomBinCount + totalColumns) + "/" + (randomBinCount - 1) + "/" + (randomBinCount - 1 + totalColumns) + " ";
+
+            switch (street)
+            {
+                case 0:
+                    ad = "";
+                    bd = "";
+                    break;
+                case 1:
+                    ac = "";
+                    bc = "";
+                    break;
+                default:
+                    break;
+            }
+            switch (column)
+            {
+                case 0:
+                    ad = "";
+                    ac = "";
+                    break;
+                case 1:
+                    bd = "";
+                    bc = "";
+                    break;
+                default:
+                    break;
+            }
+
+            Console.WriteLine($"We have winners on {ad}, {ac}, {bd} and {bc}!!!");
         }
     }
 
