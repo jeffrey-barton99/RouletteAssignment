@@ -141,7 +141,7 @@ namespace JeffBartonRouletteLab
         }
         else
         {
-            int temp = (randomBinCount = 1) / totalColumns;
+            int temp = (randomBinCount - 1) / totalColumns;
             switch (temp)
             {
                 case 0:
