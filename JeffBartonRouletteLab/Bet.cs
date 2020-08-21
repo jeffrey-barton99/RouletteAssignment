@@ -5,7 +5,8 @@ using System.Text;
 namespace JeffBartonRouletteLab
 {
     internal class Bet
-    //List<Bins> binCount  = Bins.makeBins(totalBins, totalColumns);maybe
+  {
+
     internal static void Numbers(int randmBinCount, int totalBins)
     {
         if (randmBinCount == totalBins+1)
@@ -204,50 +205,50 @@ namespace JeffBartonRouletteLab
         }
                
     }
-    internal static void Corner(int randomBinCount, int totalBins, int totalColumns)
-    {
-        if (randomBinCount == 0 || randomBinCount == totalBins +1)
+        internal static void Corner(int randomBinCount, int totalBins, int totalColumns)
         {
-            Console.WriteLine("No cutting corners today");
-        }
-        else
-        {
-            int street = (randomBinCount - 1) / totalColumns;
-            int column = (randomBinCount % totalColumns);
-            string ad = (randomBinCount + 1 - totalColumns) + "/" + (randomBinCount + 1) + "/" + (randomBinCount - totalColumns) + "/" + randomBinCount + " ";
-            string ac = (randomBinCount + 1) + "/" + (randomBinCount + 1 + totalColumns) + "/" + randomBinCount + "/" + (randomBinCount + totalColumns) + " ";
-            string bd = (randomBinCount - totalColumns) + "/" + randomBinCount + "/" + (randomBinCount - totalColumns - 1) + "/" + (randomBinCount - 1) + " ";
-            string bc = randomBinCount + "/" + (randomBinCount + totalColumns) + "/" + (randomBinCount - 1) + "/" + (randomBinCount - 1 + totalColumns) + " ";
-
-            switch (street)
+            if (randomBinCount == 0 || randomBinCount == totalBins + 1)
             {
-                case 0:
-                    ad = "";
-                    bd = "";
-                    break;
-                case 1:
-                    ac = "";
-                    bc = "";
-                    break;
-                default:
-                    break;
+                Console.WriteLine("No cutting corners today");
             }
-            switch (column)
+            else
             {
-                case 0:
-                    ad = "";
-                    ac = "";
-                    break;
-                case 1:
-                    bd = "";
-                    bc = "";
-                    break;
-                default:
-                    break;
-            }
+                int street = (randomBinCount - 1) / totalColumns;
+                int column = (randomBinCount % totalColumns);
+                string ad = (randomBinCount + 1 - totalColumns) + "/" + (randomBinCount + 1) + "/" + (randomBinCount - totalColumns) + "/" + randomBinCount + " ";
+                string ac = (randomBinCount + 1) + "/" + (randomBinCount + 1 + totalColumns) + "/" + randomBinCount + "/" + (randomBinCount + totalColumns) + " ";
+                string bd = (randomBinCount - totalColumns) + "/" + randomBinCount + "/" + (randomBinCount - totalColumns - 1) + "/" + (randomBinCount - 1) + " ";
+                string bc = randomBinCount + "/" + (randomBinCount + totalColumns) + "/" + (randomBinCount - 1) + "/" + (randomBinCount - 1 + totalColumns) + " ";
 
-            Console.WriteLine($"We have winners on {ad}, {ac}, {bd} and {bc}!!!");
+                switch (street)
+                {
+                    case 0:
+                        ad = "";
+                        bd = "";
+                        break;
+                    case 1:
+                        ac = "";
+                        bc = "";
+                        break;
+                    default:
+                        break;
+                }
+                switch (column)
+                {
+                    case 0:
+                        ad = "";
+                        ac = "";
+                        break;
+                    case 1:
+                        bd = "";
+                        bc = "";
+                        break;
+                    default:
+                        break;
+                }
+
+                Console.WriteLine($"We have winners on {ad}, {ac}, {bd} and {bc}!!!");
+            }
         }
     }
-
 }
