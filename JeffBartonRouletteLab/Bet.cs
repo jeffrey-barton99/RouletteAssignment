@@ -124,7 +124,57 @@ namespace JeffBartonRouletteLab
         }
         else
         {
-            int 
+            int temp = (randomBinCount - 1) / totalColumns;
+            int temp1 = (temp * totalColumns) + totalColumns - 2;
+            int temp2 = (temp * totalColumns) + totalColumns - 1;
+            int temp3 = (temp * totalColumns) + totalColumns;
+            Console.WriteLine($"{temp1}, {temp2}, {temp3} are winners");
         }
     }
+
+    internal static void SixNumbers(int randomBinCount, int totalBins, int totalColumns)
+    {
+        if (randomBinCount == 0 || randomBinCount == totalBins +1)
+        {
+            Console.WriteLine("No joy on Sixs");
+        }
+        else
+        {
+            int temp = (randomBinCount = 1) / totalColumns;
+            switch (temp)
+            {
+                case 0:
+                    int temp1 = (temp * totalColumns) + 1;
+                    int temp2 = (temp * totalColumns) + 2;
+                    int temp3 = (temp * totalColumns) + 3;
+                    int temp4 = (temp * totalColumns) + 4;
+                    int temp5 = (temp * totalColumns) + 5;
+                    int temp6 = (temp * totalColumns) + 6;
+                    Console.WriteLine($"{temp1}, {temp2}, {temp3}, {temp4}, {temp5}, {temp6} are winners!!!");
+                    break;
+                case 1:
+                    temp1 = ((temp - 1) * totalColumns) + 1;
+                    temp2 = ((temp - 1) * totalColumns) + 2;
+                    temp3 = ((temp - 1) * totalColumns) + 3;
+                    temp4 = (temp * totalColumns) + 1;
+                    temp5 = (temp * totalColumns) + 2;
+                    temp6 = (temp * totalColumns) + 3;
+                    Console.WriteLine($"{temp1}, {temp2}, {temp3}, {temp4}, {temp5}, {temp6} are winners!!!");
+                    break;
+                default:
+                    temp1 = ((temp - 1) * totalColumns) + 1;
+                    temp2 = ((temp - 1) * totalColumns) + 2;
+                    temp3 = ((temp - 1) * totalColumns) + 3;
+                    temp4 = (temp * totalColumns) + 1;
+                    temp5 = (temp * totalColumns) + 2;
+                    temp6 = (temp * totalColumns) + 3;
+                    Console.WriteLine($"{temp1}, {temp2}, {temp3}, {temp4}, {temp5}, {temp6} or  {temp4}, {temp5}, {temp6}, {temp4 + totalColumns}, {temp5 + totalColumns}, {temp6 + totalColumns} all winners here!!!");
+                    break;
+
+
+
+            }
+        }
+    }
+
 }
