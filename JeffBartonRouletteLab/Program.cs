@@ -6,7 +6,7 @@ namespace JeffBartonRouletteLab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Kitty!");
+            new App().Run();
         }
     }
 }

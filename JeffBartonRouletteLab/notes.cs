@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-/* Bets: Inside / Outside 18 red v black numbers
+/*
+ 
+Bets: Inside / Outside 18 red v black numbers
 Inside:
 Straightup - individual number payout odds 35:1
              hitting odds 37:1
-
 
 Split - 2 adjoining numbers vert or horiz 17:1
 
